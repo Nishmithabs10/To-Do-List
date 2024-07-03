@@ -1,0 +1,170 @@
+/* style.css */
+/* style.css */
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #17e243;
+    color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #dde408;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    justify-content: center; /* Center vertically */
+}
+
+header {
+    margin-bottom: 20px;
+    text-align: center; /* Center heading text */
+}
+
+h1 {
+    font-weight: 600;
+    color: #343a40;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.Todo-input {
+    width: 250px;
+    padding: 10px;
+    border: 1px solid #f3d408;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.todo-button {
+    padding: 10px 15px;
+    background-color: #d9f0df;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.todo-button:hover {
+    background-color: #23a7dc;
+}
+
+/* To-Do List Container */
+.to-do-container {
+    width: 350px;
+    max-width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.to-do-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.to-do-list li {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.to-do-list li.completed {
+    text-decoration: line-through; /* Apply line-through style for completed tasks */
+    opacity: 0.5;
+}
+
+.to-do-list li .todo-item {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.to-do-list li .complete-btn,
+.to-do-list li .trash-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.to-do-list li .complete-btn:hover {
+    color: #28a745;
+}
+
+.to-do-list li .trash-btn:hover {
+    color: #d5ef51;
+}
+
+.to-do-list li .complete-btn.completed {
+    display: none;
+}
+
+/* Animation */
+.todo {
+    animation: slideDown 0.5s ease forwards;
+}
+
+.fall {
+    animation: fall 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fall {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
